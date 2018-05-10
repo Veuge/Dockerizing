@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    build: .                                                 # Dockerfile location
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/home/node/node-app                         # Bind mount
+      - nodemodules:/home/node/node-app/node_modules  # Volume to map the node_modules repository
+volumes:
+  nodemodules:
